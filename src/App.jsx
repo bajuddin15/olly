@@ -5,8 +5,6 @@ import Cards from "./components/Cards";
 import MarketingPlan from "./pages/MaketingPlan";
 import Drafts from "./pages/Histroy";
 import Settings from "./pages/Settings";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
 import SocialMedia from "./pages/SocialMedia";
 import BlogPost from "./pages/BlogPost";
 import Seo from "./pages/Seo";
@@ -21,6 +19,13 @@ import Changelog from "./pages/Changelog";
 import Pricing from "./pages/Pricing";
 import PlanCheck from "./pages/PlanCheck";
 import DocChat from "./pages/DocChat";
+// import Forms from "./pages/Forms";
+import Signup from "./pages/auth/Signup";
+import Login from "./pages/auth/Login";
+import Verification from "./pages/auth/Verification";
+import Onboarding from "./pages/onboarding";
+// import LoginPage from "./pages/auth/Login";
+// import SignupPage from "./pages/auth/Signup";
 
 function App() {
   return (
@@ -28,6 +33,15 @@ function App() {
       <Switch>
         {/* <Route path='/' exact>
           <Landing />
+        </Route> */}
+        {/* <Route path="/forms" exact>
+          <Forms />
+        </Route> */}
+        {/* <Route path="/auth/signin" exact>
+          <LoginPage />
+        </Route>
+        <Route path="/auth/signup" exact>
+          <SignupPage />
         </Route> */}
         <Route path="/dashboard" exact>
           <Dashboard children={<Cards />} />
@@ -71,8 +85,14 @@ function App() {
         <Route path="/signup" exact>
           <Signup />
         </Route>
+        <Route path="/verify" exact>
+          <Verification />
+        </Route>
         <Route path="/" exact>
           <Login />
+        </Route>
+        <Route path="/onboarding" exact>
+          <Onboarding />
         </Route>
         <Route path="/view_history" exact>
           <Dashboard children={<ViewHisotry />} />
