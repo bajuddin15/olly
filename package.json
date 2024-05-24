@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "buildCode": "npm install && npm run build && npm install --prefix backend",
+    "start": "npm start --prefix backend"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
