@@ -10,7 +10,7 @@ const stripe = Stripe("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 import userRoutes from "./routes/user.routes.js";
 
 const __dirname = path.resolve();
-dotenv.config();
+dotenv.config({ path: "../.env" });
 
 const PORT = process.env.PORT || 3001;
 
