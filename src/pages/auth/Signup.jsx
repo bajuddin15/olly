@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../../store/slices/authSlice";
 
 const Signup = () => {
+  console.log({ endpoint: process.env.END_POINT_URL });
   const dispatch = useDispatch();
   const history = useHistory();
   const [fullName, setFullName] = React.useState("");
@@ -36,7 +37,7 @@ const Signup = () => {
     const { user, session, error } = await supabase.auth.signUp({
       email: email,
       password: password,
-      redirectTo: "https://localhost:5173/",
+      redirectTo: process.env.END_POINT_URL,
       options: {
         data: {
           fullName: fullName,
@@ -107,7 +108,7 @@ const Signup = () => {
       .signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: "https://localhost:5173/dashboard",
+          redirectTo: `${process.env.END_POINT_URL}/dashboard`,
         },
       })
       .then(() => {
